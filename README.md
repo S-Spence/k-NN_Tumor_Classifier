@@ -28,3 +28,6 @@
 <br/>
     <p>In conclusion, the k-NN algorithm performs tumor classification with a high level of accuracy. For this analysis, the parameters identified from model tuning with the caret package were the most accurate. The best model used normalization and set k equal to 11. A model that makes no misclassifications would be better. However, it is promising that none of the models misclassified a malignant tumor.</p> 
 <br/>
+                                           References
+Lantz, Brett. (2015). Machine Learning with R Second Edition. Birmingham, UK. Packt Publishing.  
+<br/>
