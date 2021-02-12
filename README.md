@@ -5,10 +5,13 @@
     <p>The next step in building the k-NN model is to normalize the dataset. The variable summary in the following command shows that the average area, smoothness, and radius do not follow the same measurement scale. Normalizing the data means generating the same distance between a five-number summary’s measurements for each variable in use. In other words, normalization creates a more measurable scale between the minimum and maximum values of the variable. The following block of code creates a normalize function. The lapply() function in the subsequent statement normalizes all variables in the dataset except the diagnosis because it is a categorical variable. The summary() command illustrates that the normalize function worked as intended.</p> 
     <p>The following block of code partitions the dataset into training, validation, and testing partitions, using a 70% split for the training data and 15% splits for the validation and testing sets. The next command fits the training and testing datasets to a k-NN model that compares the results to the training labels using the parameter k = 21, or 21 neighbors. The cross table below shows that the k-NN model using 21 neighbors was accurate 100% of the time on the validation set. However, this model is overfitting slightly, as shown in the test set evaluation at the end of the analysis.</P> 
 <br/>
-<div style="text-align:center"><img src="/images/model1Eval.png" /></div>
+      <center>**Model One: K = 21/normalization</center>
+      <center><img src="/images/model1Eval.png" ...></center>
+      <center>This is an image</center>
 <br/>
     <p>The following block of code generates new data partitions, this time using z-score standardization instead of normalization. The confusion matrix shows that this model was less accurate than the model that normalized variables. The model using z-score standardization misclassified benign tumors three times and was 96% accurate. Adjusting the k parameter could produce a more accurate model.</P>
 <br/>
+<div style="text-align:center"><img src="/images/model1Eval.png" /></div>
                                                         ![Model 2: k = 21, z-score](/images/model2Eval.png)  
 <br/>
     <p>The caret package can generate multiple models to determine which value of k produces the most accurate k -NN model. The caret package used the original dataset, including the diagnosis variable. The first lines of code set a control function and a seed value to replicate the results. The next statement used the train() command from the caret package to test several values of k using the kappa statistic for evaluation. This function’s output showed that k = 11 produced the most accurate model with 98% accuracy and one benign misclassification. The confusion matrix below shows the evaluation of this model on the validation set.</p> 
