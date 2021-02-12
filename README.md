@@ -9,17 +9,17 @@
 <br/>
     <p>The following block of code generates new data partitions, this time using z-score standardization instead of normalization. The confusion matrix shows that this model was less accurate than the model that normalized variables. The model using z-score standardization misclassified benign tumors three times and was 96% accurate. Adjusting the k parameter could produce a more accurate model.</P>
 <br/>
-<div style="text-align:center"><img src="..." /></div>![Model 2: k = 21, z-score](/images/model2Eval.png)  
+                                                        ![Model 2: k = 21, z-score](/images/model2Eval.png)  
 <br/>
     <p>The caret package can generate multiple models to determine which value of k produces the most accurate k -NN model. The caret package used the original dataset, including the diagnosis variable. The first lines of code set a control function and a seed value to replicate the results. The next statement used the train() command from the caret package to test several values of k using the kappa statistic for evaluation. This function’s output showed that k = 11 produced the most accurate model with 98% accuracy and one benign misclassification. The confusion matrix below shows the evaluation of this model on the validation set.</p> 
 <br/>
-<div style="text-align:center"><img src="..." /></div>![Model 3: k = 11, normalization](/images/model3Eval.png)
+                                                        ![Model 3: k = 11, normalization](/images/model3Eval.png)
 <br/>
    <p>The first confusion matrix below shows the evaluation of the model with k set to 11, as recommended by tuning with the caret package. The second confusion matrix is the final evaluation of the original model using normalization with k set to 21. These confusion matrices evaluate the models on the test set. The first model had an accuracy of 97% with two benign tumor misclassifications. The second model had an accuracy of 96% with three benign misclassifications.</p>
 <br/>
-<div style="text-align:center"><img src="..." /></div>![Model 4: k = 11](/images/model4Eval.png)
+                                                        ![Model 4: k = 11](/images/model4Eval.png)
 <br/>
-<div style="text-align:center"><img src="..." /></div>![Model 5: k = 21](/images/model5Eval.png)  
+                                                        ![Model 5: k = 21](/images/model5Eval.png)  
 <br/>
     <p>In conclusion, the k-NN algorithm performs tumor classification with a high level of accuracy. For this analysis, the parameters identified from model tuning with the caret package were the most accurate. The best model used normalization and set k equal to 11. A model that makes no misclassifications would be better. However, it is promising that none of the models misclassified a malignant tumor.</p> 
 <br/>
